@@ -20,6 +20,11 @@ function displayClock() {
     var dd = d.getDate();
     var min = (mins = ('0' + d.getMinutes()).slice(-2));
     var hh = d.getHours();
+    
+    //Fix for 12AM.
+    if (hh == 0) {
+        hh = 24;
+    }
 
     document.getElementById('hour').innerText = hh;
     document.getElementById('separator').innerHTML = ' : ';
